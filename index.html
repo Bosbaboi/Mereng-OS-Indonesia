@@ -8,12 +8,10 @@
 
   <!-- SEO Meta -->
   <meta name="description"
-    content="Mereng OS adalah sistem operasi Windows kustom yang ringan, cocok untuk laptop dan PC kelas bawah. Bebas bloatware, cepat, dan stabil.." />
+    content="Mereng OS adalah sistem operasi Windows kustom yang ringan, cocok untuk laptop dan PC kelas bawah. Bebas bloatware, cepat, dan stabil." />
   <meta name="keywords"
     content="Mereng OS, alternatif Tiny10, Windows 11 kustom, OS ringan, modifikasi Windows, Windows tanpa bloatware, Windows kelas bawah" />
   <meta name="author" content="Mereng OS" />
-
-  <!-- Google Search Console Verification -->
   <meta name="google-site-verification" content="MH481fHnsXlUbwk70VP20XcaSKX8Frlr_H7XL8bZUcY" />
 
   <!-- Open Graph -->
@@ -26,9 +24,7 @@
 
   <!-- Theme & Favicon -->
   <meta name="theme-color" content="#00ffcc" />
-  <link rel="icon" href="favicon.ico" type="Mereng Os Icon" />
-  
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <style>
     /* --- Reset & Base --- */
@@ -59,12 +55,42 @@
       outline: none;
     }
 
+    /* --- Navbar --- */
+    nav {
+      background: #0f1117;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 255, 204, 0.15);
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #00ffcc;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+    }
+
     /* --- Header --- */
     header {
-      background-color: #0f1117;
-      padding: 3rem 1.5rem 2rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 255, 204, 0.15);
+      padding: 3rem 1.5rem 2rem;
     }
 
     header h1 {
@@ -149,6 +175,7 @@
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
     }
 
     .card:hover,
@@ -165,39 +192,19 @@
       letter-spacing: 0.03em;
     }
 
-    .card p {
-      flex-grow: 1;
-      color: #bbb;
-      font-size: 1rem;
-      margin-bottom: 1.25rem;
-      line-height: 1.4;
-    }
-
     .download-btn {
-      align-self: flex-start;
       background-color: #00ffcc;
       color: #000;
       font-weight: 700;
       padding: 0.65rem 1.3rem;
       border-radius: 8px;
-      box-shadow: 0 4px 8px #00ffccaa;
+      display: inline-block;
+      margin-top: 1rem;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
     }
 
-    .download-btn:hover,
-    .download-btn:focus {
+    .download-btn:hover {
       background-color: #00ccaa;
-      box-shadow: 0 6px 12px #00ccaaee;
-      outline: none;
-    }
-
-    .download-btn[disabled],
-    .download-btn.disabled {
-      background-color: #444;
-      color: #888;
-      cursor: not-allowed;
-      box-shadow: none;
     }
 
     /* --- Comparison Table --- */
@@ -262,18 +269,7 @@
       font-size: 2rem;
       margin-top: 0;
       margin-bottom: 1.25rem;
-      letter-spacing: 0.05em;
       text-align: center;
-    }
-
-    .install-guide ol {
-      padding-left: 1.5rem;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .install-guide li {
-      margin-bottom: 1rem;
     }
 
     /* --- Community Section --- */
@@ -289,69 +285,67 @@
       font-weight: 700;
       font-size: 2rem;
       margin-bottom: 0.75rem;
-      letter-spacing: 0.05em;
-    }
-
-    .community-section p {
-      color: #bbb;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .community-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
-      margin-bottom: 2.5rem;
     }
 
     .community-card {
       background-color: #11131b;
       padding: 1.75rem 1.5rem;
       border-radius: 12px;
-      color: #e5e5e5;
       box-shadow: 0 0 15px rgba(0, 170, 255, 0.1);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .community-card:hover,
-    .community-card:focus-within {
-      box-shadow: 0 0 25px #00aaffcc;
-      outline: none;
-    }
-
-    .community-card h3 {
-      margin-top: 0;
-      color: #00aaff;
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
     }
 
     .discord-btn {
       background-color: #5865F2;
       color: white;
-      padding: 14px 28px;
+      padding: 12px 24px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 1.125rem;
       display: inline-block;
-      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .discord-btn:hover,
-    .discord-btn:focus {
-      background-color: #4752c4;
-      transform: scale(1.05);
-      outline: none;
+    /* --- Dashboard Section --- */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    .dashboard .card {
+      padding: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background:#0f1117;
+      color:#888;
+      font-size:0.9rem;
     }
   </style>
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Mereng OS</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#compare">Compare</a></li>
+      <li><a href="#guide">Install</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
   <header>
     <h1>MERENG OS</h1>
     <p>Windows Kostum • Cepat • Tanpa Bloatware</p>
@@ -362,15 +356,13 @@
       <img src="mereng-os.png" alt="Mereng OS Logo">
     </section>
 
-    <section class="about-section">
+    <section class="about-section" id="about">
       <h2>About Mereng OS</h2>
-      <p>
-        Mereng OS adalah windows 10/11 diracang untuk gaming  
-        Cocok Untuk Laptop atau PC lama Dan Tanpa Bloatware..  
-      </p>
+      <p>Mereng OS adalah Windows 10/11 dirancang untuk gaming.  
+      Cocok Untuk Laptop atau PC lama dan tanpa bloatware.</p>
     </section>
 
-    <section class="cards-grid">
+    <section class="cards-grid" id="download">
       <div class="card">
         <h3>MerengOS 10</h3>
         <p>Windows Mod 10.</p>
@@ -378,7 +370,7 @@
       </div>
       <div class="card">
         <h3>MerengOS 11</h3>
-        <p>Windows 11 mod Bypass TPM Dan Tanpa Bloatware.</p>
+        <p>Windows 11 mod Bypass TPM dan Tanpa Bloatware.</p>
         <a href="https://bosbaboi.github.io/Merengos-11-Download.io/" class="download-btn">Lihat</a>
       </div>
       <div class="card">
@@ -388,45 +380,29 @@
       </div>
     </section>
 
-    <section class="compare-section">
+    <section class="compare-section" id="compare">
       <h2>VS</h2>
       <table class="compare-table">
-        <tr>
-          <th>Fitur</th>
-          <th>Windows Original</th>
-          <th>Mereng OS</th>
-        </tr>
-        <tr>
-          <td>Ukuran Install</td>
-          <td>> 20GB</td>
-          <td>± 6GB/9 GB</td>
-        </tr>
-        <tr>
-          <td>Bloatware</td>
-          <td>Banyak</td>
-          <td>Kosong</td>
-        </tr>
-        <tr>
-          <td>Performa</td>
-          <td>Normal</td>
-          <td>Cepat</td>
-        </tr>
+        <tr><th>Fitur</th><th>Windows Original</th><th>Mereng OS</th></tr>
+        <tr><td>Ukuran Install</td><td>> 20GB</td><td>± 6GB/9 GB</td></tr>
+        <tr><td>Bloatware</td><td>Banyak</td><td>Kosong</td></tr>
+        <tr><td>Performa</td><td>Normal</td><td>Cepat</td></tr>
       </table>
     </section>
 
-    <section class="install-guide">
+    <section class="install-guide" id="guide">
       <h2>Cara Install</h2>
       <ol>
-        <li>Downlad Mereng OS ISO Terbaru.</li>
-        <li>Buat Bootable Pakai Rufus atau Ventoy.</li>
-        <li>BootinG Ke Usb Dan Jalankan Setup.</li>
-        <li>Ikuti Instruksi sampai selesai.</li>
+        <li>Download Mereng OS ISO terbaru.</li>
+        <li>Buat bootable pakai Rufus atau Ventoy.</li>
+        <li>Booting ke USB dan jalankan setup.</li>
+        <li>Ikuti instruksi sampai selesai.</li>
       </ol>
     </section>
 
-    <section class="community-section">
+    <section class="community-section" id="community">
       <h2>Mereng OS Komunitas</h2>
-      <p>Bergabung ke dalam komnitas. Dan Mendapatkan Pembaruan dari Discord</p>
+      <p>Bergabung ke dalam komunitas dan dapatkan pembaruan dari Discord</p>
 
       <div class="community-cards">
         <div class="community-card">
@@ -443,13 +419,28 @@
         </div>
       </div>
     </section>
+
+    <section id="dashboard">
+      <h2 style="text-align:center;color:#00ffcc;margin-bottom:1rem;">Dashboard Navigasi</h2>
+      <div class="dashboard">
+        <div class="card"><a href="https://mereng-os-web.vercel.app">🏠 Home (English)</a></div>
+        <div class="card"><a href="https://youtube.com/@bukharibukhari5670" target="_blank">▶️ YouTube</a></div>
+        <div class="card"><a href="#"target="_blank">Commingsoon</a></div>
+        <div class="card"><a href="http://dsc.gg/merengos" target="_blank">💬 Discord</a></div>
+        <div class="card"><a href="#" target="_blank">⬇Comming Soon</a></div>
+        <div class="card"><a href="#" target="_blank">Comming Soon</a></div>
+      </div>
+    </section>
   </main>
 
-  <footer style="text-align:center; padding: 1.5rem; background:#0f1117; color:#888; font-size:0.9rem;">
+  <footer>
     &copy; 2025 (Diterjemahkan) Oleh Pembuat Muhammad Bukhari Al Deni. All rights reserved.
   </footer>
 </body>
 </html>
+    
+      
+
 
 
 
